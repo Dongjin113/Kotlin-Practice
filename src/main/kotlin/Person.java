@@ -4,8 +4,28 @@ import org.jetbrains.annotations.Nullable;
 public class Person {
 
     private final String name;
-    public Person(String name){
+    private int age;
+
+    public Person(String name , int age){
+        //나이검증
+        if(this.age <=0){
+            throw new IllegalArgumentException(String.format("나이는 %s일 수 없습니다",age));
+        }
         this.name = name;
+        this.age = age;
+    }
+
+    public Person(String name ){
+        //기존에 있던 생성자를 호출해준다
+        this(name, 1);
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     //@Nullable
