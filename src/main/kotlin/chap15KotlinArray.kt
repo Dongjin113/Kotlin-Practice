@@ -1,2 +1,0 @@
-class chap15KotlinArray {
-}
